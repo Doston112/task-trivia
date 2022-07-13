@@ -1,0 +1,144 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__text {
+        position: relative;
+        z-index: 1;
+        font-size: 34px;
+        line-height: 46px;
+        font-family: "QuicksandBold";
+        color: $secondary;
+    }
+    &__logo{
+        height: 200px;
+        width: 450px;
+        background: url(../../assets/images/logo.svg) center center no-repeat;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        width: 100%;
+        &-row{
+            display: flex;
+            align-items: center;
+            margin-bottom: 13px;
+            &__text{
+                font-size: 15px;
+                margin-left: 15px;
+                color: $orange;
+                font-family: $QuicksandBold;
+            }
+            &__image{
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &-select{
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+            &__element{
+                @include input;
+                max-width: 300px;
+                width: 100%;
+                height: 50px;
+                justify-content: space-between;
+                cursor: pointer;
+                &:hover {
+                    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+                }
+                background-color: transparent;
+                font-size: 15px;
+                line-height: 150%;
+                & img {
+                    vertical-align: middle;
+                }
+            }
+            &__options{
+                @include input;
+                position: absolute;
+                z-index: 1;
+                height: 100px;
+                border: none;
+                top: 55px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 0;
+                background-color: rgba(0, 3, 39, 0.9);
+                & ul {
+                    width: 100%;
+                    & li {
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        border-bottom: 1px solid gray;
+                        list-style: none;
+                        outline: none;
+                        padding: 0 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &__image{
+                width: 12px;
+                height: 12px;
+            }
+        }
+        &__input{
+            @extend .form-select__element;
+            outline: none;
+            margin-bottom: 100px;
+            cursor: auto;
+            &::placeholder{
+                color: $white;
+            }
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .home{
+        &__logo{
+            height: 140px;
+            max-width: 300px;
+            background-size: 4500px 200px;
+        }
+        &__text{
+            font-size: 26px;
+        }
+        .form {
+            max-width: 280px;
+            &-row {
+                &__text{
+                    font-size: 13px;
+                }
+                &__image {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &-select {
+                &__element{
+                    height: 40px;
+                }
+                &__options{
+                    top: 40px;
+                    height: 80px;
+                    & ul li {
+                        height: 40px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: $primary-color;
+    overflow-x: hidden;
+    &-left{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        &-shape{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: visible;
+        }
+        &__image{
+            width: 185px;
+        }
+    }
+
+    &-block{
+        position: relative;
+        @include column;
+        width: 185px;
+        width: 172px;
+        &__image{
+            position: absolute;
+            left: 0;
+            bottom: -30px;
+            
+        }
+
+    }
+    
+    &-right{
+        position: absolute;
+        top: 0;
+        right: -30px;
+        bottom: 0;
+        @include column;
+        gap: 30%;
+        align-items: center;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        // flex: 1;
+        justify-content: center;
+    }
+}
+
+
+.ground {
+    overflow: hidden;
+    background-color: $white;
+    &-left {
+        position: fixed;
+        @extend .container-left;
+        left: -50px;
+        gap: 150px;
+        &__image1 {
+            width: 120px;
+            height: 250px;
+        }
+        
+        &__image2 {
+            width: 200px;
+            height: 350px;
+        }
+    }
+    &-right {
+        position: fixed;
+        @extend .container-right;
+        gap: 40%;
+        &__image1 {
+            width: 100px;
+            height: 220px;
+        }
+        &__image2 {
+            width: 120px;
+            height: 250px;
+        }
+    }
+}
+
+
+@media(max-width: 576px) {
+    .container {
+        &-block{
+            & img:nth-child(1) {
+                height: 220px;
+            }
+            & img:nth-child(2) {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        &-right{
+            right: -60px;
+            & img:nth-child(1) {
+                height: 160px;
+                width: 120px;
+            }
+            & img:nth-child(2) {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    }
+    .ground {
+        background-color: $white;
+        &-left {
+            &__image1 {
+                width: 95px;
+                height: 150px;
+            }
+            &__image2{
+                width: 170px;
+                height: 170px;
+            }
+        }
+        &-right{
+            gap: 60%;
+        }
+    }
+}

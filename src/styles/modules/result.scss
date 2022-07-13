@@ -1,0 +1,128 @@
+.result {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  flex: 1;
+  width: 100%;
+  padding: 30px;
+  &-top {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &__bg {
+      width: 50px;
+      height: 50px;
+      background: $white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    &__image {
+      width: 45px;
+      height: 45px;
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 20px;
+      font-family: "Comfortaa";
+      margin-left: 15px;
+      & span {
+        font-size: 24px;
+        color: $red;
+      }
+    }
+  }
+  &-stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    &__image {
+      margin-right: 5px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  &-block {
+    margin-bottom: 20px;
+  }
+  &-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    min-height: 60px;
+    background: $white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    &__text {
+      max-width: 600px;
+      font-size: 14px;
+      line-height: 108%;
+      padding-right: 10px;
+      color: $text-color;
+    }
+    &__image {
+      width: 20px;
+      height: 15px;
+    }
+  }
+  &-wrong{
+    background-color: $pink;
+  }
+  &-cancel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    cursor: pointer;
+    &__image {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .result {
+    &-top {
+      &__bg {
+        width: 32px;
+        height: 32px;
+      }
+      &__image {
+        width: 30px;
+        height: 30px;
+      }
+      &__text {
+        font-size: 18px;
+        line-height: 20px;
+        & span {
+          font-size: 20px;
+        }
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+    &-stars__image {
+      width: 22px;
+      height: 22px;
+    }
+    &-question__text {
+      font-size: 12px;
+      line-height: 128.9%;
+    }
+    &-cancel{
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        &__image{
+            width: 15px;
+            height: 15px;
+        }
+    }
+  }
+}
